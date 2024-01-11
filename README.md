@@ -2,6 +2,9 @@
 
 Este repositorio aborda la tarea de mapeo de memoria en el contexto de un programa en lenguaje C ejecutado en GNU/Linux. El objetivo principal es acceder a datos en un archivo binario llamado `datos`, proveniente del radar meteorológico RMA1 en Ciudad Universitaria (UNC). Se espera que el programa realice mapeo de memoria, castee los datos según la estructura proporcionada y resuelva algunas actividades incrementales.
 
+### Autores:
+- **Bottini, Franco Nicolas**
+
 ## Estructura del Proyecto
 
 El proyecto se organiza de la siguiente manera:
