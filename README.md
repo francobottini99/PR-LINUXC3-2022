@@ -1,52 +1,52 @@
-# Prácticas de Lenguaje C en GNU/Linux
+# C Language Practices in GNU/Linux
 
-Este repositorio aborda la tarea de mapeo de memoria en el contexto de un programa en lenguaje C ejecutado en GNU/Linux. El objetivo principal es acceder a datos en un archivo binario llamado `datos`, proveniente del radar meteorológico RMA1 en Ciudad Universitaria (UNC). Se espera que el programa realice mapeo de memoria, castee los datos según la estructura proporcionada y resuelva algunas actividades incrementales.
+This repository addresses memory mapping in the context of a C program executed on GNU/Linux. The primary goal is to access data in a binary file called `datos`, sourced from the RMA1 weather radar in Ciudad Universitaria (UNC). The program is expected to perform memory mapping, cast the data according to a provided structure, and solve several incremental activities.
 
-### Autores:
+### Authors:
 - **Bottini, Franco Nicolas**
 
-## Estructura del Proyecto
+## Project Structure
 
-El proyecto se organiza de la siguiente manera:
+The project is organized as follows:
 
-- **inc/Lab6.h:** Encabezado que contiene la estructura de datos RMA1 y las declaraciones de funciones.
-- **src/Lab6.c:** Archivo fuente que implementa las funciones para cargar el archivo y obtener muestras.
-- **main.c:** Programa principal que utiliza las funciones implementadas en Lab6.c.
-- **Makefile:** Archivo para compilar y construir el proyecto.
+- **inc/Lab6.h:** Header file containing the RMA1 data structure and function declarations.
+- **src/Lab6.c:** Source file implementing functions for loading the file and obtaining samples.
+- **main.c:** Main program that uses the functions implemented in Lab6.c.
+- **Makefile:** File for compiling and building the project.
 
-## Compilación y Ejecución
+## Compilation and Execution
 
-Para compilar el proyecto, se puede utilizar el siguiente comando:
+To compile the project, use the following command:
 
 ```bash
 make
 ```
 
-Este comando generará el ejecutable "lab6". Luego, se puede ejecutar el programa con:
+This command generates the executable "lab6." Then, you can run the program with:
 
 ```bash
 ./lab6
 ```
 
-## Funcionamiento del Programa
+## Program Operation
 
-El programa realiza las siguientes acciones:
+The program performs the following actions:
 
-1. Carga el archivo binario "datos" utilizando la función `load_rawdata`.
-2. Obtiene las muestras mediante la función `get_samples`, que mapea el archivo y devuelve un arreglo de estructuras RMA1.
-3. Calcula la cantidad total de muestras y la media de la variable `validSamples`.
-4. Imprime los resultados en la consola.
+1. Loads the binary file "datos" using the `load_rawdata` function.
+2. Obtains the samples through the `get_samples` function, which maps the file and returns an array of RMA1 structures.
+3. Calculates the total number of samples and the average of the `validSamples` variable.
+4. Prints the results to the console.
 
-## Cuestionarios Adicionales
+## Additional Questions
 
-### 1. ¿Cuál es la importancia del mapeo de memoria en este contexto?
+### 1. Why is memory mapping important in this context?
 
-El mapeo de memoria es crucial en este contexto porque nos permite acceder directamente a los datos almacenados en el archivo binario sin necesidad de leerlos explícitamente. Al mapear el archivo en memoria, se crea una correspondencia entre la memoria del programa y el archivo en disco. Esto facilita la manipulación eficiente de grandes conjuntos de datos y mejora el rendimiento al evitar múltiples lecturas del archivo.
+Memory mapping is crucial in this context because it allows direct access to data stored in the binary file without explicitly reading it. By mapping the file into memory, a correspondence is created between the program's memory and the file on disk. This facilitates the efficient handling of large data sets and improves performance by avoiding multiple file reads.
 
-### 2. ¿Cómo se gestiona la liberación de memoria utilizada?
+### 2. How is the used memory released?
 
-La liberación de memoria se realiza al final del programa. Se liberan las muestras obtenidas mediante la función `free(samples)`. Además, se utiliza la función `munmap` para liberar la memoria asignada al mapeo del archivo.
+Memory is freed at the end of the program. The samples obtained are released through the `free(samples)` function. Additionally, the `munmap` function is used to release the memory allocated for mapping the file.
 
-## Conclusiones
+## Conclusions
 
-El uso de mapeo de memoria proporciona una forma eficiente de acceder y manipular datos almacenados en archivos. La estructura del programa facilita la comprensión y modificación del código, y la organización en módulos mejora la mantenibilidad. La compilación con flags específicos y la ausencia de errores y warnings garantizan la robustez del código.
+Using memory mapping provides an efficient way to access and manipulate data stored in files. The program structure facilitates code understanding and modification, and the modular organization improves maintainability. Compilation with specific flags and the absence of errors and warnings ensure code robustness.
